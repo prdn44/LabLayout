@@ -1,0 +1,219 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  padding: 30px;
+  min-height: 100vh;
+}
+
+.container {
+  display: flex;
+  gap: 40px;
+}
+
+.sidebar {
+  width: 340px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  padding: 30px;
+  border-radius: 20px;
+  color: white;
+  height: fit-content;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar h1 {
+  font-size: 32px;
+}
+
+/* ========================= */
+/* INSTAGRAM LINK FIX */
+/* ========================= */
+
+.creator-link {
+  display: inline-block;
+  margin-top: 6px;
+  margin-bottom: 20px;
+
+  color: #cbd5e1; /* biar bukan biru */
+  text-decoration: none; /* hilang underline */
+
+  font-size: 14px;
+  transition: 0.2s ease;
+}
+
+.creator-link:hover {
+  color: #38bdf8;
+  transform: translateX(2px);
+}
+
+/* ========================= */
+
+.sidebar p {
+  margin-top: 5px;
+  margin-bottom: 20px;
+  color: #cbd5e1;
+}
+
+.sidebar label {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.sidebar input[type="number"],
+.sidebar input[type="file"] {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+}
+
+.checkbox-row {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+#downloadBtn {
+  margin-top: 20px;
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  background: #38bdf8;
+  font-size: 15px;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+#downloadBtn:hover {
+  transform: translateY(-2px);
+}
+
+.workspace {
+  flex: 1;
+}
+
+.nav {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.nav button {
+  padding: 10px 15px;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+#paper {
+  width: 794px;
+  height: 1123px;
+  background: #ffffff;
+  padding: 20px;
+
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.18);
+
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+}
+
+#layoutArea {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.preview-image {
+  position: absolute;
+  object-fit: contain;
+  border: 1px solid #e5e7eb;
+  background: white;
+}
+@media (max-width: 900px) {
+  body {
+    padding: 15px;
+  }
+
+  .container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .sidebar {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .workspace {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .nav {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .nav button {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  #pageCounter {
+    font-size: 14px;
+  }
+
+  /* preview A4 diperkecil */
+  #paper {
+    width: 100%;
+
+    /* skala proporsional A4 */
+    aspect-ratio: 210 / 297;
+
+    height: auto;
+
+    min-width: 300px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 500px) {
+  .sidebar h1 {
+    font-size: 26px;
+  }
+
+  .creator-link {
+    font-size: 13px;
+  }
+
+  .sidebar label {
+    font-size: 14px;
+  }
+
+  .sidebar input {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  #downloadBtn {
+    padding: 12px;
+    font-size: 14px;
+  }
+}
